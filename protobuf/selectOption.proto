@@ -1,0 +1,62 @@
+syntax = "proto3";
+package protobuf;
+
+// 工程用途
+message SelectOptionProjectUseIn {
+}
+message SelectOptionProjectUseOut {
+    message Data {
+        int32 id = 1;
+        string name = 2;
+    }
+    repeated Data data = 1;
+}
+
+// 工程类别
+message SelectOptionProjectTypeIn {
+}
+message SelectOptionProjectTypeOut {
+    message Data {
+        int32 id = 1;
+        string name = 2;
+    }
+    repeated Data data = 1;
+}
+
+// 进度类型
+message SelectOptionScheduleTypeIn {
+}
+message SelectOptionScheduleTypeOut {
+    message Data {
+        int32 id = 1;
+        string name = 2;
+    }
+    repeated Data data = 1;
+}
+
+// 结构类型
+message SelectOptionStructureTypeIn {
+}
+message SelectOptionStructureTypeOut {
+    message Data {
+        int32 id = 1;
+        string name = 2;
+    }
+    repeated Data data = 1;
+}
+
+// 下拉筛选
+service SelectOption {
+    // 工程用途
+    rpc ProjectUse (SelectOptionProjectUseIn) returns (SelectOptionProjectUseOut) {
+    }
+    // 工程类别
+    rpc ProjectType (SelectOptionProjectTypeIn) returns (SelectOptionProjectTypeOut) {
+    }
+    // 进度类型Structure
+    rpc ScheduleType (SelectOptionScheduleTypeIn) returns (SelectOptionScheduleTypeOut) {
+    }
+    // 结构类型
+    rpc StructureType (SelectOptionStructureTypeIn) returns (SelectOptionStructureTypeOut) {
+    }
+}
