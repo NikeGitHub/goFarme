@@ -5,8 +5,6 @@
 *.log
 /main
 /server
-.vscode
-bot.go
-/etcd/k9606.sh
 smart
 smartgy
+.gitignore
